@@ -4,7 +4,7 @@ export default function listPreviewPage() {
   return (
     <div>
       <Table>
-        <TableCaption>A list of all Supplier.</TableCaption>
+        <TableCaption>A list of all Supplier</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">Supplier_Id</TableHead>
