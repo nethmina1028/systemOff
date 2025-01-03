@@ -80,8 +80,14 @@ export const sidebarItems: NavGroup[] = [
       },
       {
         title: "Products",
-        path: `${basePath}/products`,
+        path: "#",
         icon: File,
+        subItems: [
+          { title: "List", path: `${basePath}/products/list-preview` },
+          { title: "View", path: `${basePath}/products/view-preview` },
+          { title: "Add", path: `${basePath}/products/add-preview` },
+          { title: "Edit", path: `${basePath}/products/edit-preview` },
+        ],
       },
       {
         title: "Sent",
