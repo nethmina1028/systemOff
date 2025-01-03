@@ -40,7 +40,7 @@ export const sidebarItems: NavGroup[] = [
     items: [
       {
         title: "Terminal",
-        path: `${basePath}/inbox`,
+        path: `${basePath}/terminal`,
         icon: Inbox,
       },
       {
@@ -79,8 +79,8 @@ export const sidebarItems: NavGroup[] = [
         ],
       },
       {
-        title: "Drafts",
-        path: `${basePath}/drafts`,
+        title: "Products",
+        path: `${basePath}/products`,
         icon: File,
       },
       {
