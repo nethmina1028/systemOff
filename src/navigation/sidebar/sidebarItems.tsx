@@ -49,9 +49,9 @@ export const sidebarItems: NavGroup[] = [
         icon: Receipt,
         subItems: [
           { title: "List", path: `${basePath}/invoice/list-preview` },
-          { title: "View", path: `${basePath}/invoice/view` },
-          { title: "Add", path: `${basePath}/invoice/add` },
-          { title: "Edit", path: `${basePath}/invoice/edit` },
+          { title: "View", path: `${basePath}/invoice/view-preview` },
+          { title: "Add", path: `${basePath}/invoice/add-preview` },
+          { title: "Edit", path: `${basePath}/invoice/edit-preview` },
         ],
       },
       {
@@ -59,10 +59,10 @@ export const sidebarItems: NavGroup[] = [
         path: "#",
         icon: Receipt,
         subItems: [
-          { title: "List", path: `${basePath}/supplier/list-preview` },
-          { title: "View", path: `${basePath}/supplier/view` },
-          { title: "Add", path: `${basePath}/supplier/add` },
-          { title: "Edit", path: `${basePath}/supplier/edit` },
+          { title: "List", path: `${basePath}/supliers/list-preview` },
+          { title: "View", path: `${basePath}/supliers/view-preview` },
+          { title: "Add", path: `${basePath}/supliers/add-preview` },
+          { title: "Edit", path: `${basePath}/supliers/edit-preview` },
         ],
       },
 
@@ -73,9 +73,9 @@ export const sidebarItems: NavGroup[] = [
         icon: KeySquare,
         subItems: [
           { title: "List", path: `${basePath}/employee/list-preview` },
-          { title: "View", path: `${basePath}/employee/view` },
-          { title: "Add", path: `${basePath}/employee/add` },
-          { title: "Edit", path: `${basePath}/employee/edit` },
+          { title: "View", path: `${basePath}/employee/view-preview` },
+          { title: "Add", path: `${basePath}/employee/add-preview` },
+          { title: "Edit", path: `${basePath}/employee/edit-preview` },
         ],
       },
       {
