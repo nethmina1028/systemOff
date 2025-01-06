@@ -43,10 +43,8 @@ export function TeamSwitcher({
                 <span className="truncate font-semibold">POS Sytem</span>
                 <span className="truncate text-xs">Supermarket</span>
               </div>
-             
             </SidebarMenuButton>
           </DropdownMenuTrigger>
-         
         </DropdownMenu>
       </SidebarMenuItem>
     </SidebarMenu>

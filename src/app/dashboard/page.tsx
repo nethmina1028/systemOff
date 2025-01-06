@@ -22,7 +22,7 @@ export default function Page() {
         <div className="flex-col items-center justify-between space-y-2 md:flex md:flex-row">
           <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
 
-          {/* 
+          {/*
           <div className="flex-col items-center space-y-2 md:flex md:flex-row md:space-x-2 md:space-y-0">
             <DateRangePicker selectedRange={selectedRange} onChangeRange={setSelectedRange} />
             <Button className="w-full">Download</Button>
@@ -35,9 +35,7 @@ export default function Page() {
             <TabsTrigger value="analytics" disabled>
               Analytics
             </TabsTrigger>
-            <TabsTrigger value="reports" >
-              Reports
-            </TabsTrigger>
+            <TabsTrigger value="reports">Reports</TabsTrigger>
           </TabsList>
           <TabsContent value="overview" className="space-y-4">
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -49,7 +47,6 @@ export default function Page() {
 
                 <CardContent>
                   <div className="text-2xl font-bold">$45,231.89</div>
-               
                 </CardContent>
               </Card>
               <Card>
@@ -59,7 +56,6 @@ export default function Page() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">+2350</div>
-                 
                 </CardContent>
               </Card>
               <Card>
@@ -69,7 +65,6 @@ export default function Page() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">+12,234</div>
-                
                 </CardContent>
               </Card>
               <Card>
@@ -79,7 +74,6 @@ export default function Page() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold">+573</div>
-                 
                 </CardContent>
               </Card>
             </div>

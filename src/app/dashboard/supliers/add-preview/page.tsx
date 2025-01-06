@@ -1,102 +1,107 @@
-export default function ListPreviewPage() {
+"use client";
+
+import { z } from "zod";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { createSupplier, Supplier } from "@/app/actions";
+
+import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+
+const formSchema = z.object({
+  Supplier_Name: z.string(),
+  Category: z.string(),
+  Contact_Details: z.string(),
+  SupplierContact_No: z.string(),
+});
+
+export default function AddSupplierPage() {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      Supplier_Name: "",
+      Category: "",
+      Contact_Details: "",
+      SupplierContact_No: "",
+    },
+  });
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const supplier: Supplier = {
+      ...values,
+    };
+
+    try {
+      await createSupplier(supplier);
+      form.reset();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 p-6 md:p-10">
-      <div className="w-full max-w-4xl rounded-lg bg-white p-8 shadow-lg">
-        <h1 className="mb-6 text-center text-3xl font-bold text-gray-800">Add Supplier</h1>
-        <form action="#" method="POST" className="flex flex-col gap-6 md:flex-row">
-          {/* Left side */}
-          <div className="flex-1 space-y-5">
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Supplier Name</label>
-              <input
-                type="text"
-                name="supplier-name"
-                className="mt-1 block w-full rounded-md border border-gray-300 p-3 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
-                placeholder="Enter supplier name"
-                required
-              />
-            </div>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <FormField
+          control={form.control}
+          name="Supplier_Name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Supplier Name</FormLabel>
+              <FormControl>
+                <Input placeholder="Supplier Name" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Category</label>
-              <input
-                type="text"
-                name="category"
-                className="mt-1 block w-full rounded-md border border-gray-300 p-3 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
-                placeholder="Enter category"
-                required
-              />
-            </div>
+        <FormField
+          control={form.control}
+          name="Category"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Category</FormLabel>
+              <FormControl>
+                <Input placeholder="Category" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Contract Details</label>
-              <input
-                type="text"
-                name="contract-details"
-                className="mt-1 block w-full rounded-md border border-gray-300 p-3 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
-                placeholder="Enter contract details"
-                required
-              />
-            </div>
+        <FormField
+          control={form.control}
+          name="Contact_Details"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Contact Details</FormLabel>
+              <FormControl>
+                <Input placeholder="Contact Details" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Supplier Contact No</label>
-              <input
-                type="tel"
-                name="supplier-contact"
-                className="mt-1 block w-full rounded-md border border-gray-300 p-3 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
-                placeholder="Enter supplier contact number"
-                required
-              />
-            </div>
-          </div>
+        <FormField
+          control={form.control}
+          name="SupplierContact_No"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Supplier Contact No</FormLabel>
+              <FormControl>
+                <Input placeholder="Supplier Contact No" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-          {/* Right side */}
-          <div className="flex-1 space-y-5">
-            <div>
-              <label className="block text-sm font-medium text-gray-700">City</label>
-              <input
-                type="text"
-                name="city"
-                className="mt-1 block w-full rounded-md border border-gray-300 p-3 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
-                placeholder="Enter city"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Street</label>
-              <input
-                type="text"
-                name="street"
-                className="mt-1 block w-full rounded-md border border-gray-300 p-3 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
-                placeholder="Enter street"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Lane</label>
-              <input
-                type="text"
-                name="lane"
-                className="mt-1 block w-full rounded-md border border-gray-300 p-3 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
-                placeholder="Enter lane"
-                required
-              />
-            </div>
-          </div>
-        </form>
-
-        <div className="mt-6 flex justify-center">
-          <button
-            type="submit"
-            className="w-1/2 rounded-md bg-black px-4 py-3 text-white shadow focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          >
-            + Add
-          </button>
-        </div>
-      </div>
-    </div>
+        <Button type="submit">Submit</Button>
+      </form>
+    </Form>
   );
 }

@@ -1,5 +1,3 @@
 export default function addPreviewPage() {
-    return <div>
-      Edit Me
-    </div>
-  }
+  return <div>Edit Me</div>;
+}

@@ -66,7 +66,6 @@ export const sidebarItems: NavGroup[] = [
         ],
       },
 
-
       {
         title: "Employees",
         path: "#",

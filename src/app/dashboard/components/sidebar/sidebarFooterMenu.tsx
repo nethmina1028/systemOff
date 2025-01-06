@@ -65,8 +65,7 @@ export default function SidebarFooterMenu({
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-          
-           
+
             <DropdownMenuItem>
               <LogOut />
               Log out

@@ -42,10 +42,6 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </header>
 
-              
-                
-
-
           <div className="p-4 pt-0">{children}</div>
         </SidebarInset>
       </SidebarProvider>
