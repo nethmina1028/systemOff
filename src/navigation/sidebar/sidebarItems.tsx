@@ -49,7 +49,6 @@ export const sidebarItems: NavGroup[] = [
         icon: Receipt,
         subItems: [
           { title: "List", path: `${basePath}/invoice/list-preview` },
-          { title: "View", path: `${basePath}/invoice/view-preview` },
           { title: "Add", path: `${basePath}/invoice/add-preview` },
           { title: "Edit", path: `${basePath}/invoice/edit-preview` },
         ],
@@ -60,7 +59,6 @@ export const sidebarItems: NavGroup[] = [
         icon: Receipt,
         subItems: [
           { title: "List", path: `${basePath}/supliers/list-preview` },
-          { title: "View", path: `${basePath}/supliers/view-preview` },
           { title: "Add", path: `${basePath}/supliers/add-preview` },
           { title: "Edit", path: `${basePath}/supliers/edit-preview` },
         ],
@@ -72,7 +70,6 @@ export const sidebarItems: NavGroup[] = [
         icon: KeySquare,
         subItems: [
           { title: "List", path: `${basePath}/employee/list-preview` },
-          { title: "View", path: `${basePath}/employee/view-preview` },
           { title: "Add", path: `${basePath}/employee/add-preview` },
           { title: "Edit", path: `${basePath}/employee/edit-preview` },
         ],
@@ -83,7 +80,6 @@ export const sidebarItems: NavGroup[] = [
         icon: File,
         subItems: [
           { title: "List", path: `${basePath}/products/list-preview` },
-          { title: "View", path: `${basePath}/products/view-preview` },
           { title: "Add", path: `${basePath}/products/add-preview` },
           { title: "Edit", path: `${basePath}/products/edit-preview` },
         ],

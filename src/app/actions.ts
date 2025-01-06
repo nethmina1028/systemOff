@@ -44,7 +44,13 @@ export async function createStock(stock: Stock): Promise<Stock> {
        VALUES (@Product_Name, @Price, @Quantity, @Expire_Date, @Supplier_ID)`,
     );
 
-  return result.recordset as Stock;
+  return result.recordset as unknown as Stock;
+}
+
+export async function deleteStock(stockId: number): Promise<void> {
+  const pool = await getDbConnection();
+
+  await pool.request().input("Stock_ID", stockId).query("DELETE FROM Stock WHERE Stock_ID = @Stock_ID");
 }
 
 // CREATE TABLE Supplier(
@@ -85,5 +91,11 @@ export async function createSupplier(supplier: Supplier): Promise<Supplier> {
        VALUES (@Supplier_Name, @Category, @Contact_Details, @SupplierContact_No)`,
     );
 
-  return result.recordset as Supplier;
+  return (result.recordset as unknown) as Supplier;
+}
+
+export async function deleteSupplier(supplierId: number): Promise<void> {
+  const pool = await getDbConnection();
+
+  await pool.request().input("Supplier_ID", supplierId).query("DELETE FROM Supplier WHERE Supplier_ID = @Supplier_ID");
 }

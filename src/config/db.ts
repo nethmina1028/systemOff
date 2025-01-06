@@ -1,4 +1,5 @@
 import sql from "mssql";
+import type { ConnectionPool } from "mssql";
 
 const config = {
   user: "sa",
@@ -10,7 +11,7 @@ const config = {
   },
 };
 
-let pool;
+let pool = null as ConnectionPool | null;
 
 export const getDbConnection = async () => {
   if (!pool) {

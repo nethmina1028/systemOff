@@ -2,21 +2,21 @@
 
 import { z } from "zod";
 import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { createStock, getSuppliers, Stock, Supplier } from "@/app/actions";
 
 import { Check, ChevronsUpDown } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { createStock, getSuppliers, Stock, Supplier } from "@/app/actions";
 
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
-import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
   Product_Name: z.string(),
@@ -105,7 +105,13 @@ export default function AddStockPage() {
             <FormItem>
               <FormLabel>Quantity</FormLabel>
               <FormControl>
-                <Input type="number" placeholder="Quantity" {...field} disabled={isLoading} />
+                <Input
+                  type="number"
+                  placeholder="Quantity"
+                  value={field.value}
+                  onChange={(e) => field.onChange(Number(e.target.value))}
+                  disabled={isLoading}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
